@@ -1,0 +1,40 @@
+<% provide(:title, @user.username) %>
+
+        <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
+
+        <%= gravatar_for @user %>
+        <b style="color:blue"> Username:  </b><%= @user.username %></br>
+        <b style="color:red"> Email:   </b><%= @user.email %>
+        <table >
+            <tr>
+                <th>Quiz Name</th>
+                <th>Question Attempted</th>
+                <th>Question UnAttempted</th>
+                <th>Quiz Score</th>
+            <% if logged_in? && ((user_object.email) == @user.email)%>            
+                <th>Play Again/Resume</th>                
+            <%end%>
+            </tr>
+        </table>
+        <%@status.each do |stat|%>
+        <table class="table table-striped">
+
+            <tr>    
+                <td><%=@status_name.find(stat.quize_id).name%></td>        
+                <td><%=stat.Attempt%></td>
+                <td><%=5-stat.Attempt%></td>        
+                <td><%=stat.Score%></td>  
+            <% if logged_in? && ((user_object.email) == @user.email)%>
+                <%if stat.Attempt ==5 %>
+                   <td> <%= link_to "Play Again", "/games/remove/" + String(stat.quize_id)%> </td>
+                <%else%>
+                   <td> <%= link_to "Resume", "/quizes/" + String(stat.quize_id)%> </td>
+                <%end%>
+            <%end%>    
+            </tr>     
+         </table>
+        </br></br>
+    <%end%>
+ 

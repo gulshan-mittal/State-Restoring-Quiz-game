@@ -1,0 +1,46 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+table, td, th {
+    table-layout: fixed;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    height: 40px;
+    background-color: rgba(21, 173, 59, 0.73);
+    color: white;
+}
+th, td {
+    // padding: 5px;
+    text-align: left;
+}
+
+.gravatar {
+    float: left;
+    margin-right: 10px;
+  }
+  
+  .gravatar_edit {
+    margin-top: 15px;
+  }
+
+  
+  #error_explanation {
+    color: red;
+    ul {
+      color: red;
+      margin: 0 0 30px 0;
+    }
+  }
+  
+//   .field_with_errors {
+//     @extend .has-error;
+//     .form-control {
+//       color: red;
+//     }
+//   }

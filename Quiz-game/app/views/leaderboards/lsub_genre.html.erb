@@ -1,0 +1,33 @@
+<h1 style="color: blue ; text-align: center">  SubGenres Leaderboards </h1>
+
+</br></br>
+
+<table >
+       <tr>
+       <th>#Gravatar</th>
+         <th>Username</th>
+         <th> SubGenre</th>         
+           <th >Score</th>
+        </tr>
+ </table>
+  <% @lsubgenre1.each do |subgenre| %>
+    <table class="table table-striped">
+      <tr>
+       <td>
+         <%= gravatar_for subgenre[3] %>
+       </td>
+        <td>
+          <%= subgenre[0]%>
+       </td>
+       <td>
+          <%= subgenre[2]%>
+       </td>
+        <td>
+            <%=subgenre[1]%>
+        </td>
+    </tr>
+<%end%>
+</table>
+
+
+

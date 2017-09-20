@@ -1,0 +1,17 @@
+<% provide(:title, 'Questions') %>
+<h1 style="text-align:center; color:grey ">Update Genres</h1></br></br></br>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@genre) do |f| %>
+    <%# <%= render 'shared/error_messages1' %>
+      
+      <%= f.label :name %>
+      <%= f.text_field :name ,class: 'form-control' %>
+      </br>
+
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+    </br>
+  </div>
+</div>

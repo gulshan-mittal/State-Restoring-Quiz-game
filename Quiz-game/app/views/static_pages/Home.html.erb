@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BrainHub</title>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
+    
+  </head>
+  <body>
+  <div> 
+      
+      <div class="center jumbotron" style="width: 1150px">
+      <img src="/assets/quizzy.jpg" alt="Image NOt found" width="50%">
+  <h1>Welcome to the BrainHub Quiz</h1>
+
+  <h2>
+    This is the home to test Your Mind with Others.
+  </h2>
+      <% if (logged_in?)==false %>
+        <%= link_to "Sign up now!", '/SignUp', class: "btn btn-lg btn-primary" %>
+      <%end%>
+</div>
+    </div>   
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a href="/genres" class="btn btn-primary">
+          <span class="glyphicon glyphicon-th-list"></span> </br><p style= "font-size: 20px">Genres</p>
+        </a>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a href="/sub_genres" class="btn btn-success" style="width:95px">
+          <span class="glyphicon glyphicon-th-list" style=""></span> </br><p style= "font-size: 17px;">SubGenre</p>
+        </a>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a href="/quizes" class="btn btn-danger" >
+          <span class="glyphicon glyphicon-th-list"></span> </br><p style= "font-size: 20px">Quizes</p>
+        </a> 
+  </body>
+</html>

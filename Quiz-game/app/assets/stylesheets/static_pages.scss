@@ -1,0 +1,139 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+.navbar-nav > li > a {padding-top:3px !important; padding-bottom:3x !important;}
+.navbar {min-height:25px !important}
+body {
+   padding-top: 70px;
+ }
+
+ /*form*/
+
+ input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 12px;
+    // @include box_sizing;
+  }
+  
+  input {
+    height: auto !important;
+  }
+
+  .center {
+    text-align: center;
+  }
+  
+  .center h1 {
+    margin-bottom: 10px;
+  }
+  
+
+  .dropbtn {
+    background-color: #4C8BAF;
+    color: white;
+    padding: 15px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #F1F1F1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #8E3E3E;
+}
+
+#logo {
+    float: left;
+    margin-right: 10px;
+    font-size: 1.7em;
+    color: #fff;
+    letter-spacing: -1px;
+    padding-top: 9px;
+    font-weight: bold;
+  }
+  
+  #logo:hover {
+    color: #65B4FF;
+    text-decoration: none;
+  }
+  
+  #logo1 {
+    float: right;
+    margin-right: 10px;
+    font-size: 1.7em;
+    color: #fff;
+    letter-spacing: -1px;
+    padding-top: 9px;
+    font-weight: bold;
+  }
+  
+  #logo1:hover {
+    color: #65B4FF;
+    text-decoration: none;
+  }
+
+  footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid #eaeaea;
+    color: #777;
+  }
+  
+  footer a {
+    color: #555;
+  }
+  
+  footer a:hover {
+    color: #222;
+  }
+  
+  footer small {
+    float: left;
+  }
+  
+  footer ul {
+    float: right;
+    list-style: none;
+  }
+  
+  footer ul li {
+    float: left;
+    margin-left: 15px;
+  }
+
+  .glyphicon {
+    font-size: 50px;
+}

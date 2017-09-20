@@ -1,0 +1,21 @@
+<% provide(:title, 'Questions') %>
+<h1 style="text-align:center; color:grey ">Quiz</h1></br></br></br>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@quize) do |f| %>
+    <%# <%= render 'shared/error_messages1' %>
+      
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      </br>
+
+      <%= f.label :sub_genre_id%>
+      <%= f.select 'sub_genre_id', options_for_select(@sub_genre_name.collect{ |u| [u.name, u.id] })%>
+      </br>
+
+      <%= f.submit "Create SubGenre", class: "btn btn-primary" %>
+    <% end %>
+    </br>
+  </div>
+</div>

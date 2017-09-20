@@ -1,0 +1,50 @@
+<table >
+       <tr>
+         <th>Quizes</th>
+           
+           <%if current_user.admin?%>
+              <th>
+                  Update Quiz
+              </th>
+              <th>
+                  Delete Quiz
+              </th>
+          <%end%>
+          <th >Quiz</th>
+         <%if current_user.admin?%>
+            <th>
+                Questons
+            </th>
+          <%end%>
+            <th >Leaderboard</th>
+        </tr>
+ </table>
+  <% @sub_genre.quizes.each do |quize| %>
+    <table class="table table-striped">
+      <tr>
+        <td>
+          <%= quize.name %>
+       </td>
+       <%if current_user.admin?%>
+            <td>
+                 <%= link_to "Update", edit_quize_path(quize) %> </i>
+            </td>
+            <td> 
+               <%= link_to "delete", quize, method: :delete,
+                                           data: { confirm: "You sure?" } %>
+            </td>
+        <%end%>
+        <td>
+          <%= link_to "Quiz", '/games/'+ String(quize.id), method: :get%>
+        </td>
+        <%if current_user.admin?%>
+            <td>
+                 <%= link_to "Quiz Questions", '/questions/'+ String(quize.id), method: :get%>
+            </td>
+        <%end%>
+        <td>
+          <%= link_to "Leaderboard", '/leaderboards/lquiz/'+ String(quize.id), method: :get%>
+        </td>
+      </tr>
+<%end%>
+</table>

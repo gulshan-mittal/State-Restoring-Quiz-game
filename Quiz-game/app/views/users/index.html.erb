@@ -1,0 +1,53 @@
+
+<%= will_paginate %>
+<table >
+       <tr>
+         <th>Username</th>
+         <% if current_user.admin? %>
+           <th >Delete User</th>
+         <%end%>
+           <th >Profile</th>
+        </tr>
+ </table>
+  <% @users.each do |user| %>
+    <% if logged_in? %>
+    <table class="table table-striped">
+      <tr>
+        <td>
+            <% if current_user.admin?  %>
+               <%= link_to user.username,"users/" + String(user.id)  ,method: :get%>
+            <%else%>
+              <% if user.admin?  %>
+                <b style="color:red"> Admin: <%=user.username%> </b>
+              <%else%>
+                <%= link_to user.username,"users/" + String(user.id)  ,method: :get%>
+              <%end%>
+            <%end%>
+       </td>
+        <% if current_user.admin? && !current_user?(user) %>
+        <td> 
+            <%= link_to "delete", user, method: :delete,
+                                           data: { confirm: "You sure?" } %>
+        </td>
+        <%else%>
+            <%if current_user.admin?%>
+               <td> <h5 style="color:red"> Admin cant' be deleted</h5></td>
+            <%end%>
+        <%end%>
+        <% if current_user.admin?  %>
+               <td><%= link_to "View profile","users/" + String(user.id)  ,method: :get%></td>
+        <%else%>
+            <% if user.admin?  %>
+                <td><b style="color: blue"> Permission denied </b></td>
+            <%else%>
+                 <td><%= link_to "View profile","users/" + String(user.id)  ,method: :get%></td>
+            <%end%>
+        <%end%>
+      </tr>
+    </table>
+    <%else%>
+        <h4 style="text-color:Red"> You must be <i>Logged</i> in </h4>
+        <%break%>
+    <% end %>
+  <% end %>
+<%= will_paginate %>

@@ -1,0 +1,31 @@
+
+<table >
+       <tr>
+         <th>Questions</th>
+        </tr>
+ </table>
+    <%@quize.questions.each do |question|%>
+      <table class="table table-striped">
+
+        <tr> <td> <b style="color:brown">Type:&nbsp</b><%=question.Choice%> &nbsp&nbsp  <b><%= link_to "Delete Question", '/questions/'+ String(question.id), method: :delete , data: { confirm: "You sure?" } %> 
+       </b>  &nbsp&nbsp  <%= link_to "Update Question", edit_question_path(question)%></td></tr>        
+       <tr><td><b style="color:red">Question: </b> <%=question.Problem%></td></tr>
+
+
+        <tr><td><b>Option A => </b><%=question.Option_A%></td></tr>
+                
+            
+        <tr><td><b>Option B => </b><%=question.Option_B%></td><tr>            
+        
+            
+        <tr><td><b>Option C => </b><%=question.Option_C%></td></tr>
+            
+                
+        <tr><td> <b>Option D => </b><%=question.Option_D%></td></tr>
+        <tr> <td><b  style="color:green">Correct Answer: </b><%=question.Correct_Answer%></td></tr>
+        <tr><td> <b style="color:blue">Quiz Id: </b><%=question.quize_id%></td></tr>                
+
+      </table>
+      </br></br>
+    <%end%>
+

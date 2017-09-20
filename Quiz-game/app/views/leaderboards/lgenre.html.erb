@@ -1,0 +1,30 @@
+<h1 style="color: blue ; text-align: center">  Genres Leaderboards </h1>
+
+</br></br>
+<table >
+       <tr>
+         <th>#Gravatar</th>        
+         <th>Username</th>
+           <th > Genre </th>         
+           <th >Score</th>
+        </tr>
+ </table>
+  <% @lgenre1.each do |genre| %>
+    <table class="table table-striped">
+      <tr>
+      <td>
+          <%= gravatar_for genre[3] %>
+       </td>
+        <td>
+          <%= genre[0]%>
+       </td>
+       <td>
+            <%=genre[2]%>
+        </td>
+        <td>
+            <%=genre[1]%>
+        </td>
+    </tr>
+<%end%>
+</table>
+

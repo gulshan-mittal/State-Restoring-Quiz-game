@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  quize: one
+  Attempt: 1
+  Complete: false
+  Score: 1
+
+two:
+  user: two
+  quize: two
+  Attempt: 1
+  Complete: false
+  Score: 1

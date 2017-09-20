@@ -1,0 +1,38 @@
+<table >
+       <tr>
+         <th>Questions</th>
+        </tr>
+ </table>
+      
+      <%if @quiz_state==nil %>
+          <p style="color:red; text-align:center;"><b> Admin has not put any question </b></p>
+      <%else%> 
+        <b style=" color: red"> Current Score:   <%=@game_state.Score%> </b>
+       <%= form_tag("/games/play", method: "POST") do %>
+
+      
+          <h4 style="color: green"> Type:  <%=@quiz_state.question.Choice%> </h4>
+           <input id="quizzy1" name="quizzy1" type= "hidden" value= <%=@quiz_state.question.quize_id%>>
+             <input id="quizzy2" name="quizzy2" type= "hidden" value= <%=@quiz_state.question_id%>>
+            <input id="quizzy3" name="quizzy3" type= "hidden" value= <%=@quiz_state.id%>>
+            <%= @quiz_state.question.Problem%>
+          <input type="checkbox" name="Options[]" value="A"><%=@quiz_state.question.Option_A%>
+            
+          <input type="checkbox" name="Options[]" value="B"><%=@quiz_state.question.Option_B%>
+            
+        
+        
+         <input type="checkbox" name="Options[]" value="C"> <%=@quiz_state.question.Option_C%>
+            
+        
+          
+         <input type="checkbox" name="Options[]" value="D"><%=@quiz_state.question.Option_D%>
+            
+        
+       
+        <%= submit_tag  "Submit", class: "btn btn-primary"%>
+      <%end%>
+     <%end%>
+</br>
+</br>
+</br>

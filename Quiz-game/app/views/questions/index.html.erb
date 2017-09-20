@@ -1,0 +1,28 @@
+
+<table >
+       <tr>
+         <th>Questions</th>
+        </tr>
+ </table>
+  <% @quizes.each do |quize| %>
+
+    <%quiz.questions.each do |question|%>
+      <table class="table table-striped">
+
+
+    <%= @quiz_state.question.Problem%>
+
+
+      <%=@quiz_state.question.Option_A%>
+                
+            
+      <%=@quiz_state.question.Option_B%>
+            
+        
+            
+    <%=@quiz_state.question.Option_C%>
+            
+                
+    <%=@quiz_state.question.Option_D%>
+<%end%>
+</table>

@@ -1,0 +1,29 @@
+<h1 style="color: blue ; text-align: center">  Quiz Leaderboard </h1>
+<h1 style="color: red; text-align: center"><%=@quiz_name%>  </h1>
+</br></br>
+
+<table >
+       <tr>
+       <th>#Gravatar</th>
+         <th>Username</th>     
+           <th >Score</th>
+        </tr>
+ </table>
+  <% @lquiz.each do |quiz| %>
+    <table class="table table-striped">
+      <tr>
+       <td>
+         <%= gravatar_for quiz[0] %>
+       </td>
+        <td>
+          <%= quiz[1]%>
+       </td>
+       <td>
+          <%= quiz[2]%>
+       </td>
+    </tr>
+<%end%>
+</table>
+
+
+

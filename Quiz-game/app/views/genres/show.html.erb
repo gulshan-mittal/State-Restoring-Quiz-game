@@ -1,0 +1,35 @@
+<table >
+       <tr>
+         <th>Sub Genre</th>
+         <%if current_user.admin?%>
+          <th> Update SubGenre </th>
+          <th> Delete Subgenre</th>
+         <%end%> 
+           <th >Quizes</th>
+           <th>Leaderboard</th>
+        </tr>
+ </table>
+  <% @genre.sub_genres.each do |sub_genre| %>
+    <table class="table table-striped">
+      <tr>
+        <td>
+          <%= sub_genre.name %>
+       </td>
+       <%if current_user.admin?%>
+         <td>
+          <%= link_to "Update", edit_sub_genre_path(sub_genre) %>
+         </td>
+         <td> 
+            <%= link_to "delete", sub_genre, method: :delete,
+                                           data: { confirm: "You sure?" } %>
+        </td>
+       <%end%> 
+        <td>
+          <%= link_to "Quizes", '/sub_genres/'+ String(sub_genre.id), method: :get%>
+        </td>
+        <td>
+          <%= link_to "leaderboard", '/leaderboards/lsub_genre/'+ String(sub_genre.id), method: :get%>
+        </td>
+      </tr>
+<%end%>
+</table>

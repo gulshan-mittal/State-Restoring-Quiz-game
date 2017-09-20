@@ -1,0 +1,44 @@
+<% provide(:title, 'Questions') %>
+<h1 style="text-align:center; color:grey ">Questions</h1></br></br></br>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@question) do |f| %>
+    <%= render 'shared/error_messages1' %>
+      
+      <%= f.label :Choice %>
+      <%= f.text_field :Choice %>
+      </br>
+
+      <%= f.label :Problem %>
+      <%= f.text_field :Problem %>
+        </br>
+      
+      <%= f.label :Option_A %>
+      <%= f.text_field :Option_A%>
+
+        </br>
+      <%= f.label :Option_B %>
+      <%= f.text_field :Option_B %>
+
+      </br>
+      <%= f.label :Option_C %>
+      <%= f.text_field :Option_C %>
+
+      </br>
+      <%= f.label :Option_D %>
+      <%= f.text_field :Option_D %>
+
+      <%= f.label :Correct_Answer %>
+      <%= f.text_field :Correct_Answer %>
+      </br>
+
+      <%= f.label :quize_id %>
+      <%= f.select 'quize_id', options_for_select(@quiz_name.collect{ |u| [u.name, u.id] })%>
+      </br>
+
+      <%= f.submit "Create Question", class: "btn btn-primary" %>
+    <% end %>
+    </br>
+  </div>
+</div>
